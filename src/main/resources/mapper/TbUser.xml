@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xbc.mapper.TbUserMapper">
+
+<!--    <resultMap id="UserResMap" type="com.xbc.entity.TbUser">-->
+<!--        <result property="account" column="account"></result>-->
+
+<!--    </resultMap>-->
+
+
+
+
+    <select id="logincheck" resultType="com.xbc.entity.TbUser">
+        select * from  tb_user
+        where account=#{account} and password=#{password}
+    </select>
+<!--    keyProperty="id"-->
+
+    <insert id="insertUser" parameterType="com.xbc.entity.TbUser" keyProperty="id" useGeneratedKeys="true" >
+    insert into
+    tb_user(account,password,name,state,sex,phone,uemail,integral)
+    values(#{account},#{password},#{name},#{state},#{sex},#{phone},#{uemail},#{integral})
+</insert>
+
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+    delete from tb_user where id = #{id}
+</delete>
+
+
+    <select id="Userlist" resultType="com.xbc.entity.TbUser">
+        select *  from  tb_user
+    </select>
+
+<!--    分页查询-->
+    <select id="queryUser" resultType="com.xbc.entity.TbUser" parameterType="com.xbc.entity.TbUser">
+    select * from  tb_user
+    <where>
+        <if test="e.account!=null and e.account!=''">and account = #{e.account}</if>
+    </where>
+    limit #{start},#{pageSize}
+    </select>
+<!--    查询总数-->
+    <select id="queryCount" resultType="int" parameterType="com.xbc.entity.TbUser">
+    select count(id) from tb_user
+    <where>
+        <if test="e.name!=null and e.name!=''">and name like concat('%',#{e.name},'%') </if>
+    </where>
+    </select>
+
+    <select id="findById"  resultMap= "levelmap">
+             select * from tb_user
+   </select>
+    <select id="selectlevel" parameterType="java.lang.Integer" resultType="com.xbc.entity.TbLevel">
+                select * from tb_level where id=#{id}
+   </select>
+    <resultMap type="com.xbc.entity.TbUser" id="levelmap">
+        <result property="level" column="level"></result>
+        <association property="tbLevel" column="level" javaType="com.xbc.entity.TbLevel" select="selectlevel">
+        </association>
+    </resultMap>
+
+
+<!--修改用户信息-->
+<update id="upadteinfo" parameterType="com.xbc.entity.TbUser" >
+
+    update  tb_user set name=#{name} ,phone=#{phone} where id=#{id}
+</update>
+
+</mapper>

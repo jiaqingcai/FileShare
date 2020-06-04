@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--    &lt;!&ndash; 别名 &ndash;&gt;-->
+<!--    <typeAliases>-->
+<!--        <package name="pojo"/>-->
+<!--    </typeAliases>-->
+    <!-- 数据库环境 -->
+    
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    
+    
+    
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/db_exp?characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="root"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
+<!--    &lt;!&ndash; 映射文件 &ndash;&gt;-->
+
+<!--    mapper注册-->
+<!--    <mappers>-->
+<!--        <mapper resource="mapper/TbAdmin.xml"/>-->
+<!--        <mapper resource="mapper/TbRole.xml"/>-->
+<!--        <mapper resource="mapper/TbUser.xml"/>-->
+<!--    </mappers>-->
+
+
+
+</configuration>

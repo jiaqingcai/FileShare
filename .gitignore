@@ -1,0 +1,4 @@
+# Project exclude paths
+/target/
+!/FileShare.iml
+!/.idea/

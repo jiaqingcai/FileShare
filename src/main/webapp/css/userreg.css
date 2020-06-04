@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+*:focus{outline: none;}
+body{
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(to top,#e6e9f0 0%,#eef1f5 100%);
+}
+.contact-form{
+    width:60%;
+    position:absolute;
+    top: 20%;
+    left: 35%;
+}
+.tree{
+    position:relative;
+    top:40%;
+    left: 10%;
+}
+.contact-form h2,.contact-form span{
+    font-family: Georgia,Times,"Times New Roman",Serif;
+}
+.contact-form ul{
+    width: 75%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.contact-form li{
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+.contact-form li:first-child,.contact-form li:last-child{
+    border-bottom: 1px solid #777;
+}
+.contact-form h2{
+    margin: 0;
+}
+.contact-form span{
+    width: 15%;
+    margin-top: 3px;
+    display: inline-block;
+    padding: 3px;
+}
+
+.usually input{
+    height: 15%;
+    width: 40%;
+    padding: 5px 8px;
+    background: #ffff38 url(../image/attention.png) no-repeat 98% center;
+    border: 1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius: 2px;
+    transition: padding-right .25s;
+}
+
+.usually input:focus{
+    background: #fff;
+    border: 1px solid #555;
+    box-shadow: 0 0 3px #aaa;
+    padding-right: 70px;
+}
+
+input[type="submit"]{
+    background-color: #68b12f;
+    background: linear-gradient(top,#68b12f,#50911e);
+    border: 1px solid #509111;
+    border-bottom: 1px solid #5b992b;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #9fd574;
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #396715;
+}
+input[type="submit"]:hover{
+    opacity: .85;
+    cursor: pointer;
+}
+
+input[type="submit"]:active{
+   border: 1px solid #20911e;
+    box-shadow: 0 0 10px 5px #356b0b inset;
+}
+
+.usually input:focus:invalid{
+    background: #fff url("../image/warn.png") no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535;
+}
+
+.usually input:required:valid{
+    background: #fff url("../image/right.png") no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}

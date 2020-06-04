@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xbc.mapper.TbLogMapper">
+
+
+    <insert id="insertlog" parameterType="com.xbc.entity.TbLog"  keyProperty="Id" useGeneratedKeys="true">
+    insert into
+    tb_log(log_operator,log_logevent)
+    values(#{operator},#{logevent})
+</insert>
+
+
+    <select id="loglist" resultType="com.xbc.entity.TbLog">
+        select * from  tb_log
+    </select>
+
+</mapper>

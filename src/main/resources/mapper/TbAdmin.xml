@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xbc.mapper.TbAdminMapper">
+    <select id="logincheck" resultType="com.xbc.entity.TbAdmin">
+        select * from  tb_admin
+        where admin_account=#{adminAccount} and admin_pwd=#{adminPwd}
+    </select>
+
+
+    <insert id="insertAdmin" parameterType="com.xbc.entity.TbAdmin"  keyProperty="adminId" useGeneratedKeys="true">
+    insert into
+    tb_admin(admin_account,admin_pwd)
+    values(#{adminAccount},#{adminPwd})
+</insert>
+
+
+    <delete id="deleteAdmin" parameterType="java.lang.Integer">
+    delete from tb_admin where id = #{id}
+</delete>
+
+
+    <select id="adminlist" resultType="com.xbc.entity.TbAdmin">
+        select admin_id as adminId ,admin_account as adminAccount,admin_pwd as adminPwd from  tb_admin
+    </select>
+
+</mapper>
